@@ -1,8 +1,11 @@
+# import cudf.pandas
+# cudf.pandas.install()
+
 import requests
 import io
 import zipfile
 import pandas as pd
-
+import time
 
 od_url = "https://ostrapeispubdownloadprod.blob.core.windows.net/ostrapeis-pub-download-prod/ond40/products/db1c_public/DB1C.TICKET.202603.11JUN2026.zip"
 
@@ -19,6 +22,8 @@ dtype_dict = {
     "issuing_carrier": "category",
     "total_amount": "float32"
 }
+
+start_time = time.perf_counter()
 
 od_df = (pd.read_parquet(io.BytesIO(parquet_bytes), columns=["IssuingCarrier", "TotalAmount"])
     .rename(columns={"IssuingCarrier": "issuing_carrier", "TotalAmount": "total_amount"}))
@@ -42,3 +47,10 @@ median_ticket_price_by_t10_carrier = (od_df
 tickets_by_t10_carrier = tickets_issued_by_t10_carriers.merge(median_ticket_price_by_t10_carrier,
     on="issuing_carrier",
     how="inner")
+
+
+tickets_by_t10_carrier.to_parquet("tickets_by_t10_carrier.parquet")
+
+end_time = time.perf_counter()
+execution_time = end_time - start_time
+print(f"Process finished in {execution_time:.4f} seconds.")
