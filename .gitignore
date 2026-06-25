@@ -2,7 +2,7 @@
 .idea/
 /data_processing/tickets_by_t10_carrier.parquet
 .Rproj.user
-/data_visualization/median-ticket-prices-by-top-10-carriers.pdf
+/data_visualization/median-ticket-prices-by-top-10-carriers.png
 .DS_Store
 .Rhistory
 .Rprofile

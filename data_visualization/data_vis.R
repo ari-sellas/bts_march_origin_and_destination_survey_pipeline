@@ -46,5 +46,5 @@ ggplot(tickets_by_t10_carrier_df, aes(
     panel.grid.major = element_line(color = "black",linewidth = 0.1)
     )
 ggsave(file.path(
-  "data_visualization", "median-ticket-prices-by-top-10-carriers.pdf"
+  "data_visualization", "median-ticket-prices-by-top-10-carriers.png"
   ))
