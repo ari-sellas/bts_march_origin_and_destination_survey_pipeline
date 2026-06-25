@@ -59,5 +59,5 @@ there are a few reasons why this result actually makes sense:
   hinder performance for smaller ones, as seen here.
 
 As for the problem I set out to solve, here are the median ticket prices for the top 10 carriers. It's pretty interesting
-to see how major carriers cluster at the high-price and high-volume end, while budgets cluster low on both:
-![Median ticket prices by top 10 ticket-issuing carriers](/data_visualization/median-ticket-prices-by-top-10-carriers.png)
+to see how major carriers cluster at the high-price and high-volume end, while budget carriers cluster low on both:
+<img width="2399" height="1643" alt="median-ticket-prices-by-top-10-carriers" src="https://github.com/user-attachments/assets/51e27d94-ff79-48ca-9121-9142f3540fac" />
